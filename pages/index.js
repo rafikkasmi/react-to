@@ -22,7 +22,7 @@ export default function Home () {
   };
   //updating localstorage on change of todos
   useEffect(() => {
-    if (!!!todos.length) return
+    if (!!!todos?.length) return
     localStorage.setItem("todos", JSON.stringify(todos))
   }, [todos])
   //on mount side effect
@@ -43,7 +43,7 @@ export default function Home () {
       <main className={styles.main}>
         <AddTodo addTodo={addTodo} />
         {
-          !!todos.length ?
+          !!todos?.length ?
             <Todos deleteTodo={deleteTodo} toggleTodo={toggleTodo} todos={todos} />
             : <h1>You have no items</h1>
         }
